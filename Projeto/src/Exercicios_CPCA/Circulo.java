@@ -2,27 +2,47 @@ package Exercicios_CPCA;
 
 public class Circulo {
 
-	private int raio;
+	private double raio;
 	private int x;
 	private int y;
 	
-	public Circulo(){
-		raio =1;
-		x=1;
+	public Circulo(int x,int y){
+		this.x=x;
+		this.y=y;
+		raio=1;
+	
+	}
+	
+	public Circulo(int r){
+		this.raio=r;
 		y=1;
-		
+		x=1;
 	}
-	public Circulo(int raio, int x, int y) {
-		this.raio = raio;
-		this.x = x;
-		this.y = y;
+	
+	public Circulo(Circulo c){
+		this.raio=c.getRaio();
+		this.x=c.getX();
+		this.y=c.getY();
 	}
-
-	public int getRaio() {
+	
+	public Circulo(Ponto p,double r){
+		raio = r;
+		x=p.getX();
+		y=p.getY();
+	}
+	
+	
+	public Circulo(double d,Ponto p ){
+		raio = d/2;
+		x=p.getX();
+		y=p.getY();
+	}
+	
+	public double getRaio() {
 		return raio;
 	}
 	
-	public void setRaio(int raio) {
+	public void setRaio(double raio) {
 		this.raio = raio;
 	}
 	
@@ -42,18 +62,23 @@ public class Circulo {
 		this.y = y;
 	}
 	
-	public int aumentarCirculo(){
+	public double aumentarCirculo(){
 		raio++;
 		return raio;
 	}
 	
-	public int diminuirCirculo(){
+	public double diminuirCirculo(){
 		raio--;
 		return raio;
 	}
 	public void moverCirculo(int x,int y ){
 		this.x=x;
 		this.y=y;
+		
+	}
+	public void moverCirculo(Ponto p){
+		this.x=p.getX();
+		this.y=p.getY();
 		
 	}
 	

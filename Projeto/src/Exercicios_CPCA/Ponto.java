@@ -1,15 +1,15 @@
 package Exercicios_CPCA;
 
 public class Ponto {
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 
 	public Ponto(){
 		x=0;
 		y=0;
 	}
 	
-	public Ponto(int x1,int y1){
+	public Ponto(double x1,double y1){
 		this.x=x1;
 		this.y=y1;
 		
@@ -20,7 +20,7 @@ public class Ponto {
 		this.y=p.y;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
@@ -28,7 +28,7 @@ public class Ponto {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
@@ -38,18 +38,18 @@ public class Ponto {
 	
 	
 	public double calculaDistancia(Ponto p){
-	return this.calculaDistancia(p.getX(), p.getY());
+		return this.calculaDistancia(p.getX(), p.getY());
 	}
 
-	public double calculaDistancia(int x, int y){
+	public double calculaDistancia(double x, double y){
 		
 		return this.calculaDistancia(this.getX(),x,this.y,y);
 	}
 
-	public double calculaDistancia(int x1,int x2,int y1,int y2){
+	public double calculaDistancia(double x1,double x2,double y1,double y2){
 		double var = 0;
 		var = ((x2-x1)*(x2-x1)) +((y2-y1)*(y2-y1)) ;
-		Math.sqrt(var);
-		return var;
+		
+		return Math.sqrt(var);
 	}
 }

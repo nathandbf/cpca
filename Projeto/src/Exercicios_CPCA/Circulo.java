@@ -4,8 +4,8 @@ public class Circulo {
 
 	private static final String Throw = null;
 	private double raio;
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 	
 	public Circulo(int x,int y){
 		this.x=x;
@@ -55,7 +55,7 @@ public class Circulo {
 		this.raio = raio;
 	}
 	
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 	
@@ -63,7 +63,7 @@ public class Circulo {
 		this.x = x;
 	}
 	
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 	

@@ -2,6 +2,7 @@ package Exercicios_CPCA;
 
 public class Circulo {
 
+	private static final String Throw = null;
 	private double raio;
 	private int x;
 	private int y;
@@ -26,9 +27,17 @@ public class Circulo {
 	}
 	
 	public Circulo(Ponto p,double r){
+		if (p==null){
+			throw new NullPointerException("Ponto nulo");
+		}
+		if (r<0){
+			throw new IllegalArgumentException("Raio negativo");	
+		}
+		
 		raio = r;
 		x=p.getX();
 		y=p.getY();
+		
 	}
 	
 	

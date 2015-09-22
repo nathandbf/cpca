@@ -37,4 +37,19 @@ public class Ponto {
 	}
 	
 	
+	public double calculaDistancia(Ponto p){
+	return this.calculaDistancia(p.getX(), p.getY());
+	}
+
+	public double calculaDistancia(int x, int y){
+		
+		return this.calculaDistancia(this.getX(),x,this.y,y);
+	}
+
+	public double calculaDistancia(int x1,int x2,int y1,int y2){
+		double var = 0;
+		var = ((x2-x1)*(x2-x1)) +((y2-y1)*(y2-y1)) ;
+		Math.sqrt(var);
+		return var;
+	}
 }

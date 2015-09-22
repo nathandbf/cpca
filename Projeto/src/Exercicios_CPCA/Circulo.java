@@ -82,6 +82,8 @@ public class Circulo {
 		
 	}
 	
+
+	
 	@Override
 	public String toString() {
 		return "O Circulo possue raio de " + raio + ",tendo seu x em " + x + "e seu y em " + y + ".";

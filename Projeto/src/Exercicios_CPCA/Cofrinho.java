@@ -23,7 +23,7 @@ public class Cofrinho {
 	}
 	
 	public double valorMenorMoeda(){
-		double menor = 5000000;
+		double menor = Double.MAX_VALUE;
 		for(Moeda m : guardadas){
 			if(m.getValor()<menor){
 				menor = m.getValor();
@@ -33,7 +33,7 @@ public class Cofrinho {
 	}
 	
 	public Moeda menorMoeda(){
-		double menor = 5000000;
+		double menor = Double.MAX_VALUE;
 		Moeda m1=null;
 		for(Moeda m : guardadas){
 			if(m.getValor()<menor){
@@ -56,7 +56,7 @@ public class Cofrinho {
 		for(Moeda m : guardadas){
 			oldCount=MoedasCount.get(m.getValor());
 			
-			MoedasCount.replace((int) m.getValor(), oldCount);
+			MoedasCount.replace((int) m.getValor(), oldCount+1);
 		}
 
 		return MoedasCount;

@@ -1,10 +1,12 @@
 package Exercicios_CPCA;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class Cofrinho {
+public class Cofrinho implements Iterable {
 
 	private ArrayList<Moeda> guardadas;
 	
@@ -44,6 +46,18 @@ public class Cofrinho {
 		return m1;
 	}
 	
+	public double valorMenorMoeda2(){
+		double menor = Double.MAX_VALUE;
+		Moeda m = Collections.min(guardadas);
+		return m.getValor();
+	}
+	
+	public Moeda menorMoeda2(){
+		double menor = Double.MAX_VALUE;
+		Moeda m = Collections.min(guardadas);
+		return m;
+		}
+	
 	public Map TodasMoedas(){
 		Map<Integer, Integer> MoedasCount = new HashMap<Integer, Integer>();
 		MoedasCount.put(1, 0);
@@ -61,4 +75,34 @@ public class Cofrinho {
 
 		return MoedasCount;
 	}
+
+	public Iterator<Integer> iterator() {
+        return new Iterador();
+    }
+
+    // Inner class example
+    private class Iterador implements Iterator<Integer> {
+        private int cursor;
+
+        public Iterador() {
+           
+        }
+
+        public boolean hasNext() {
+            return this.cursor < Range.this.end;
+        }
+
+        public Integer next() {
+            if(this.hasNext()) {
+                int current = cursor;
+                cursor ++;
+                return current;
+            }
+            throw new NoSuchElementException();
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+    }
 }

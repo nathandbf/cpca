@@ -1,10 +1,12 @@
 package Exercicios_CPCA;
 
+import java.awt.font.NumericShaper.Range;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class Cofrinho implements Iterable {
 
@@ -80,29 +82,5 @@ public class Cofrinho implements Iterable {
         return new Iterador();
     }
 
-    // Inner class example
-    private class Iterador implements Iterator<Integer> {
-        private int cursor;
-
-        public Iterador() {
-           
-        }
-
-        public boolean hasNext() {
-            return this.cursor < Range.this.end;
-        }
-
-        public Integer next() {
-            if(this.hasNext()) {
-                int current = cursor;
-                cursor ++;
-                return current;
-            }
-            throw new NoSuchElementException();
-        }
-
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
-    }
+   
 }

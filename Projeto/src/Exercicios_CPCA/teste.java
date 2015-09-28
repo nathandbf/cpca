@@ -2,11 +2,10 @@ package Exercicios_CPCA;
 
 public class teste {
 	 public static void main(String[] args) {
-	        Lampada l1 = new Lampada(20,20);
-	  
-	        Ponto p1 = new Ponto (1,2);
-	        Ponto p2 = new Ponto (2,3);
-	        
-	        System.out.println(p1.calculaDistancia(p2));
+	       Matriz m1 = new Matriz(2);
+	       Matriz m2= new Matriz(2);
+	       int[][] m3 = new int[3][3];
+	       m3[0][0]=4;
+	       System.out.println(m1.somaMatriz(m3));
 	    }
 }

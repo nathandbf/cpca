@@ -1,6 +1,6 @@
 package Exercicios_CPCA;
 
-public class Moeda implements Comparable{
+public class Moeda implements Comparable<Moeda>{
 
 		private double valor;
 		private String nome;
@@ -20,6 +20,8 @@ public class Moeda implements Comparable{
 		}
 
 		
+
+		
 		public int compareTo(Moeda m) {
 			if(m.getValor()>this.getValor()){
 			return -1;	
@@ -30,5 +32,8 @@ public class Moeda implements Comparable{
 			
 			return 1;
 		}
+
+
+	
 		
 }

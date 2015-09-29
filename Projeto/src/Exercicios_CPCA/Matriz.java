@@ -57,19 +57,21 @@ public class Matriz {
 		} else {
 			int[][] matrizResultado = new int[matriz.length + matriz2.length + 2][matriz.length + matriz2.length + 2];
 			for (int i = 0; i < matriz.length; i++) {
-				System.out.println(" ");
+				System.out.println("a ");
 				for (int j = 0; j < matriz.length; j++) {
-					matrizResultado[i][j] = matriz[i][j] + matriz2[i][j];
+					matrizResultado[i][j] = matriz[i][j] ;
 					System.out.print(matrizResultado[i][j]);
 				}
 
 			}
 
-			for (int i = matriz2.length; i < matriz2.length; i--) {
+			for (int i = matriz.length; i < matriz2.length; i--) {
 				System.out.println(" ");
+				int r = 0;
 				for (int j = matriz2.length; j < matriz2.length; j--) {
-					matrizResultado[i][j] = matriz[i][j] + matriz2[i][j];
+					matrizResultado[matrizResultado.length-r][matrizResultado.length-j] = matriz2[i][j];
 					System.out.print(matrizResultado[i][j]);
+					r++;
 				}
 
 			}
